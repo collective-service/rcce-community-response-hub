@@ -51,6 +51,14 @@ body {
 #main {
   opacity: 0; }
 
+#home {
+  height: 100%;
+  background-image: url("https://www.col.org/wp-content/uploads/2015/09/GI_Main.jpeg"); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .row {
   margin: 3px; }
 
