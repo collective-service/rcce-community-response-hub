@@ -42,6 +42,11 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif; }
 
+.navbar,
+.navbar-brand img{
+  margin-right: 15px;
+  margin-top:-3px; }
+
 .container-fluid {
   padding: 0;
   margin: 0; }
