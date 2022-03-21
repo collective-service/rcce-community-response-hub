@@ -58,7 +58,9 @@ body {
   opacity: 0; }
 
 #landing-page {
-  background-color:#16537e; }
+  background-color:#16537e;
+  text-align:center;
+}
 
 .landing {
     height: 100vh;
@@ -79,8 +81,9 @@ body {
 }
 
 .menu-home {
-  position: relative;
+  position: absolute;
   z-index:1;
+  bottom:10vh;
   padding:15px;
   text-align:center;
   color:#FFF;
