@@ -57,8 +57,11 @@ body {
 #main {
   opacity: 0; }
 
+#landing-page {
+  background-color:#16537e; }
+
 .landing {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -73,7 +76,7 @@ body {
   padding:15px;
   text-align:center;
   color:#FFF;
-  background: #000;
+  background: rgba(0, 0, 0, .2)
 }
 
 .row {
