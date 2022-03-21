@@ -57,7 +57,7 @@ body {
 #main {
   opacity: 0; }
 
-#landing-page {
+.landing {
     height: 90vh;
     width: 100%;
     align-items: center;
