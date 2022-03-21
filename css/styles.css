@@ -88,7 +88,7 @@ body {
 .sitebranding img{
   float:left;
   margin:15px;
-  height:90px;
+  margin-top:-5px;
 }
 .menu-home {
   position: absolute;
