@@ -67,6 +67,12 @@ body {
     background-image: url('https://www.col.org/wp-content/uploads/2015/09/GI_Main.jpeg');
     background-size: cover;
 }
+.menu-home {
+  padding:15px;
+  text-align:center;
+  color:#FFF;
+  background: #000;
+}
 
 .row {
   margin: 3px; }
