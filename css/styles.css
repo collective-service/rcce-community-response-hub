@@ -38,7 +38,9 @@ body {
 
 
 .navbar {
- color:#FFF ; }
+ color:#FFF ;
+width:100vw;
+margin:0px !important;}
 
 .navbar,
 .navbar-brand {
@@ -149,6 +151,8 @@ body {
 
 .hidden {
   display: none; }
+
+.sub-menu {}
 
 .navFeedback a {
   color: #2F9C67; }
