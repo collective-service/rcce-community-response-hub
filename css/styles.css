@@ -80,6 +80,9 @@ body {
     -webkit-filter: grayscale(1);
 }
 
+.sitebranding {
+  padding:15px;
+}
 .menu-home {
   position: absolute;
   z-index:1;
