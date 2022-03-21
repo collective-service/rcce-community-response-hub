@@ -82,6 +82,13 @@ body {
 
 .sitebranding {
   padding:15px;
+  text-align:left;
+}
+
+.sitebranding img{
+  float:left;
+  margin:15px;
+  height:90px;
 }
 .menu-home {
   position: absolute;
