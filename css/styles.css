@@ -58,7 +58,7 @@ body {
   opacity: 0; }
 
 #landing-page {
-    height: 96vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -67,6 +67,7 @@ body {
     background-image: url('https://www.col.org/wp-content/uploads/2015/09/GI_Main.jpeg');
     background-size: cover;
     background-color: #338099;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 .row {
