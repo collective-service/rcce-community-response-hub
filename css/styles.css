@@ -83,11 +83,13 @@ body {
 .menu-home {
   position: absolute;
   z-index:1;
+  width:50vw;
   bottom:10vh;
   padding:15px;
   text-align:center;
   color:#FFF;
-  background: rgba(0, 0, 0, .6)
+  background: rgba(0, 0, 0, .5)
+  margin: auto;
 }
 
 .row {
