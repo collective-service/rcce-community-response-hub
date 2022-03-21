@@ -36,6 +36,10 @@
 body {
   font-family: "Source Sans Pro", sans-serif; }
 
+
+.navbar {
+ color:#FFF ; }
+
 .navbar,
 .navbar-brand {
   padding: 5px ;
