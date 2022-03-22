@@ -40,10 +40,12 @@ body {
   color:#FFF ;
   width:100%;
   margin:0px !important;}
-
-h4 {font-family: "Roboto", sans-serif; fontfont-size:1.3em; text-transform: uppercase; font-weight:700; color:#000;}
-h5 {font-family: "Roboto", sans-serif; fontfont-size:1.1em; font-weight:700; color:#000;}
-h6 {font-family: "Source Sans Pro", sans-serif; font-size:0.80em; font-weight:600; color:#0a3656; text-align:center;}
+h1 {font-family: "Roboto", sans-serif; font-size:1.6em; text-transform: uppercase; font-weight:800;}
+h2 {font-family: "Roboto", sans-serif; font-size:1.4em; font-weight:800;}
+h3 {font-family: "Roboto", sans-serif; font-size:1.2em; font-weight:800;}
+h4 {font-family: "Roboto", sans-serif; font-size:1.1em; font-weight:700; color:#000;}
+h5 {font-family: "Roboto", sans-serif; font-size:1.0em; font-weight:600; color:#000;}
+h6 {font-family: "Source Sans Pro", sans-serif; font-size:0.80em; font-weight:400; color:#0a3656; text-align:center;}
 
 .navbar,
 .navbar-brand {
