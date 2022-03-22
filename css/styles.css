@@ -41,7 +41,8 @@ body {
   width:100%;
   margin:0px !important;}
 
-h5 {font-size:1.1em; font-weight:600; color:#0a3656;}
+h5 {font-size:1.1em; font-weight:600; color:#000;}
+h5 {font-size:0.9em; font-weight:500; color:#0a3656;}
 
 .navbar,
 .navbar-brand {
