@@ -62,6 +62,38 @@ background:#0a3656 !important;
   margin-right: 15px;
   margin-top:-3px; }
 
+/* MENU Colors*/
+.navbar-dark .navbar-nav a.nav-link {
+  padding-bottom:2px;
+  border-bottom: 3px solid  transparent;
+  }
+  .navbar-dark .navbar-nav a.context:hover {
+      color: #9fc5e8;
+      border-bottom: 3px solid  #9fc5e8;
+    }
+.navbar-dark .navbar-nav a.coordination:hover{
+    color: #b6d7a8;
+    border-bottom: 3px solid  #b6d7a8;
+  }
+.navbar-dark .navbar-nav a.activities:hover {
+              color: #ffd966;
+              border-bottom: 3px solid  #ffd966;
+            }
+.navbar-dark .navbar-nav a.behaviors:hover {
+            color: #f6b26b;
+            border-bottom: 3px solid  #f6b26b;
+          }
+.navbar-dark .navbar-nav a.feedback:hover{
+      color: #ea9999;
+      border-bottom: 3px solid  #ea9999;
+    }
+.navbar-dark .navbar-nav a.reports:hover {
+          color: #8e7cc3;
+          border-bottom: 3px solid  #8e7cc3;
+        }
+
+
+
 .container-fluid {
   padding: 0;
   margin: 0; }
