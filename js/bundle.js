@@ -1,3 +1,4 @@
+// console.log("Bismillahi rahmani rahim")
 // =============================== *** File a_generic ***  ===============================
 /**
  * Feedback Page
@@ -404,3 +405,329 @@ function sortNestedData(a, b) {
  * End Feedback Page
  */
 // =============================== *** End File a_generic ***  ===============================
+// =============================== *** File b_default ***  ===============================
+/**
+ * Feedback Page
+ */
+//Display the default Feedback->Home view
+function initFeedbackHomePage() {
+    filteredCommunityFeedbackData.forEach(element => {
+        emergenciesFilterArr.includes(element[config['Framework']['Emergency']]) ? null : emergenciesFilterArr.push(element[config['Framework']["Emergency"]]);
+        feedbackTypesArr.includes(element[config['Framework']["Type"]]) ? null : feedbackTypesArr.push(element[config['Framework']["Type"]]);
+        adm2Arr.includes(element[config.Map.Admin2]) ? null : adm2Arr.push(element[config.Map.Admin2]);
+        adm2CodesArr.includes(element[config["Map"]["Admin2_code"]]) ? null : adm2CodesArr.push(element[config["Map"]["Admin2_code"]]);
+    });
+
+    generateKeyFigures();
+    generateEmergenciesDropdown();
+    generateFeedbackTypesDropdown();
+
+
+    // gender piechart
+    var genderData = getDataForChart("Pie", "Gender");
+    // genderPieChart = generatePieChart("genderPieChart", genderData);
+    genderPieChart = c3.generate({
+        bindto: '#genderPieChart',
+        size: {
+            height: pieChartHeight
+        },
+        data: {
+            columns: genderData,
+            type: 'pie',
+            onclick: function(d) {
+                filteredFromPieChartGender = d.name;
+                updateAll();
+            }
+        },
+        color: {
+            pattern: pieChartColorRange
+        },
+    });
+
+    // population group bar chart
+    var popData = getDataForChart("Bar", "Population");
+    //popGroupsBarChart = generateBarChart("popGroupChart", popData, 250);
+    popGroupsBarChart = c3.generate({
+        bindto: '#popGroupChart',
+        size: {
+            height: 250
+        },
+        data: {
+            x: 'x',
+            columns: popData,
+            type: 'bar',
+            onclick: function(d) {
+                filteredFromBarChartPop = popData[0][d.x + 1];
+                updateAll();
+            }
+        },
+        color: {
+            pattern: [primaryColor]
+        },
+        axis: {
+            // rotated: true,
+            x: {
+                type: 'category',
+                tick: {
+                    centered: true,
+                    outer: false
+                }
+            },
+            y: {
+                tick: {
+                    centered: true,
+                    outer: false,
+                    fit: true,
+                    count: 5,
+                    format: d3.format('d')
+                }
+            }
+        },
+        legend: {
+            show: false
+        }
+    });
+
+
+    // Emergency piechart
+    var emergencyData = getDataForChart("Pie", "Emergency");
+    emergencyPiechart = generatePieChart("emergencyPieChart", emergencyData);
+    // feedbakc pie chart
+    var feedbackData = getDataForChart("Pie", "Type");
+    feedbackPieChart = generatePieChart("feedbackPieChart", feedbackData);
+    // channel pie chart
+    var channelData = getDataForChart("Pie", "Channel");
+    channelPieChart = generatePieChart("channelPieChart", channelData);
+
+    // category bar chart
+    var categoryData = getDataForChart("Bar", "Category");
+    categoryBarChart = generateBarChart("categoryBarChart", categoryData);
+
+    // topic bar chart
+    var topicData = getDataForChart("Bar", "Code");
+    topicBarChart = generateBarChart("topicBarChart", topicData);
+
+    mapChoroplethData = generateDataForMap();
+    // display map
+    initiateMap();
+
+} //initFeedbackHomePage
+
+
+/**
+ * End Feedback Page
+ */
+// =============================== *** End File b_default ***  ===============================
+// =============================== *** File c_updatePageContent ***  ===============================
+/**
+ * Feedback Page
+ */
+//Controls each onglet (nav bar menus)'s behavior
+
+
+var feedbackNavs = document.getElementsByClassName("feedbackNav");
+for (var i = 0; i < feedbackNavs.length; i++) {
+    feedbackNavs[i].addEventListener('click', updateFeedbackFromNavs);
+}
+
+function updateFeedbackFromNavs() {
+    $('.navigation').removeClass('active');
+    $('.navigation').addClass('hidden');
+    var nav = this.value;
+
+
+    $('#' + nav).removeClass('hidden');
+    $(this).toggleClass('active');
+
+} //updateFeedbackFromNavs
+
+//Click event handler for nav-items
+$('.navFeedback').on('click', function() {
+    $('.navFeedback').removeClass('active');
+    $('.navigation').addClass('hidden');
+
+
+    //Add active class to the clicked item
+    $(this).addClass('active');
+
+    var nav = $('a', this).attr('value');
+
+    $('#' + nav).removeClass('hidden');
+});
+
+function getFilteredDataFromSelection() {
+    var data = communityFeedbackData;
+    var emergencySelected = $('#emergencySelect').val();
+    var feedbackTypeSelected = $('#feedbackTypeSelect').val();
+
+    // console.log("====before filtered data===")
+    // console.log(data)
+    if (emergencySelected != "all") {
+        data = data.filter(function(d) {
+            return d[config['Framework']['Emergency']] == emergencySelected;
+        })
+    }
+    if (feedbackTypeSelected != "all") {
+        data = data.filter(function(d) {
+            return d[config['Framework']['Type']] == feedbackTypeSelected;
+        })
+    }
+    if (selectedCountryFromMap != "all") {
+        data = data.filter(function(d) {
+            return d[config["Map"]["Admin2"]] == selectedCountryFromMap;
+        })
+    }
+    if (filteredFromPieChartGender != "all") {
+        data = data.filter(function(d) {
+            return d[config["Framework"]["Gender"]] == filteredFromPieChartGender;
+        })
+    }
+
+    if (filteredFromBarChartPop != "all") {
+        data = data.filter(function(d) {
+            return d[config["Framework"]["Population"]] == filteredFromBarChartPop;
+        })
+    }
+
+    return data;
+} //getFilteredDataFromSelection
+
+function updateChartsFromSelection(dataArg) {
+
+    var data = (dataArg == undefined) ? getFilteredDataFromSelection() : dataArg;
+
+    // update charts 
+    var newData_gender = getDataForChart("Pie", "Gender", data);
+    genderPieChart.load({ columns: newData_gender });
+
+    var newData_pop = getDataForChart("Bar", "Population", data);
+    popGroupsBarChart.load({ columns: newData_pop });
+
+    var newData_emergency = getDataForChart("Pie", "Emergency", data);
+    emergencyPiechart.load({ columns: newData_emergency });
+
+    var newData_channel = getDataForChart("Pie", "Channel", data);
+    channelPieChart.load({ columns: newData_channel });
+
+    var newData_feedback = getDataForChart("Pie", "Type", data);
+    feedbackPieChart.load({ columns: newData_feedback });
+    // console.log(newData_feedback)
+
+    var newData_topic = getDataForChart("Bar", "Code", data);
+    topicBarChart.load({ columns: newData_topic });
+
+    var newData_cat = getDataForChart("Bar", "Category", data);
+    categoryBarChart.load({ columns: newData_cat });
+
+    // update key figures too
+
+} //updateChartsFromSelection
+
+function updateAll() {
+    var data = getFilteredDataFromSelection();
+    updateChartsFromSelection(data);
+
+    // update map choropleth
+    choroplethMap(data);
+}
+
+function resetAllFilters() {
+    Adm2SelectedFromMap = false;
+    selectedCountryFromMap = "all";
+    $('#emergencySelect').val('all');
+    $('#feedbackTypeSelect').val('all');
+    //reset chart gender selection
+    filteredFromPieChartGender = 'all';
+    filteredFromBarChartPop = 'all';
+
+    var data = getFilteredDataFromSelection();
+    updateChartsFromSelection(data);
+    choroplethMap();
+
+}
+
+$('#emergencySelect').on("change", function(d) {
+    // reset map selection
+    selectedCountryFromMap = "all"; // and the boolean too
+
+    var data = getFilteredDataFromSelection();
+    updateChartsFromSelection(data);
+
+    // update map choropleth
+    choroplethMap(data);
+});
+
+$('#feedbackTypeSelect').on("change", function(d) {
+    // reset map selection
+    selectedCountryFromMap = "all"; // and the boolean too
+
+    var data = getFilteredDataFromSelection();
+    updateChartsFromSelection(data);
+
+    // update map choropleth
+    choroplethMap(data);
+});
+
+$('#dateSelect').on("change", function(d) {
+    updateChartsFromSelection();
+});
+
+$('#fResetAll').on("click", function(d) {
+    resetAllFilters();
+})
+
+/**
+ * End   Feedback Page
+ */
+// =============================== *** End File c_updatePageContent ***  ===============================
+// =============================== *** File d_update ***  ===============================
+
+//Click event handler for nav-items
+$('.navSite').on('click', function() {
+    $('.navSite').removeClass('active');
+    $('.navPage').addClass('hidden');
+
+    console.log("Changing page")
+
+    //Add active class to the clicked item
+    $(this).addClass('active');
+
+    var nav = $('a', this).attr('value');
+
+    $('#' + nav + "-page").removeClass('hidden');
+});
+
+// =============================== *** End File d_update ***  ===============================
+// v1.0 
+//  console.log("Bismillahi rahmani rahim")
+let geodataUrl = 'data/adm2.json';
+let dataURL = 'data/data.csv';
+let configFile = 'config/config.json'
+
+let geomData;
+let config;
+
+$(document).ready(function() {
+    function getData() {
+        Promise.all([
+            d3.json(geodataUrl),
+            d3.json(configFile),
+            d3.csv(dataURL)
+        ]).then(function(data) {
+            geomData = topojson.feature(data[0], data[0].objects.adm2);
+            config = data[1];
+            communityFeedbackData = data[2];
+            filteredCommunityFeedbackData = communityFeedbackData;
+            /**
+             * functions to show the vis
+             */
+            initFeedbackHomePage();
+
+            //remove loader and show vis
+            $('.loader').hide();
+            $('#main').css('opacity', 1);
+        }); // then
+    } // getData
+
+    getData();
+});
