@@ -34,13 +34,12 @@
     transform: rotate(359deg); } }
 
 body {
-  font-family: "Source Sans Pro", sans-serif; }
-
-
+  font-family: "Source Sans Pro", sans-serif;
+  margin:0; }
 .navbar {
- color:#FFF ;
-width:100vw;
-margin:0px !important;}
+  color:#FFF ;
+  width:100%;
+  margin:0px !important;}
 
 .navbar,
 .navbar-brand {
