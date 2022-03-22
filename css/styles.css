@@ -51,7 +51,7 @@ h5 {font-size:0.9em; font-weight:500; color:#0a3656;}
   font-family: "Roboto", sans-serif; }
 
 .bg-dark {
-background:#0a3656;
+background:#0a3656 !important;
 }
 
 .navbar,
