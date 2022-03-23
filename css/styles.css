@@ -155,9 +155,10 @@ background:#0a3656 !important;
   /*  PAGE TEMPLATE */
 
   /*Tabs*/
-.nav-tabs {}
+.nav-tabs {margin: 0px;}
 .submenu {
-  margin-top:10px;
+  padding-top:10px;
+  padding-left:20px;
   background:#f8f8fa;
   font-size: 0.83em;
 }
@@ -166,7 +167,9 @@ background:#0a3656 !important;
 .submenu .nav-item a:hover {background:#FFF;}
 
   /*PANEL*/
-.panel-title {font-family: "Open Source", sans-serif; font-size:1.1em; text-transform: uppercase; font-weight:300; color:#999999; margin:10px 5px 30px 5px;}
+.panel {padding:0px;}
+.panel-title {font-family: "Open Source", sans-serif; font-size:1.1em; text-transform: uppercase; font-weight:300; color:#999999; margin:10px 5px 10px 5px;}
+.section {margin-bottom:20px;}
 .chart-title {font-family: "Open Source", sans-serif; font-size:0.73em; font-weight:300; color:#5b5b5b; margin:10px 5px 10px 5px; text-align: center;}
 
 .sidebar {
