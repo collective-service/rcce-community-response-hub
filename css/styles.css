@@ -43,9 +43,9 @@ body {
 h1 {font-family: "Roboto", sans-serif; font-size:1.6em; text-transform: uppercase; font-weight:800;}
 h2 {font-family: "Roboto", sans-serif; font-size:1.4em; font-weight:800;}
 h3 {font-family: "Roboto", sans-serif; font-size:1.2em; font-weight:800;}
-h4 {font-family: "Roboto", sans-serif; font-size:1.1em; font-weight:700; color:#000;}
-h5 {font-family: "Roboto", sans-serif; font-size:1.0em; font-weight:600; color:#000;}
-h6 {font-family: "Source Sans Pro", sans-serif; font-size:0.80em; font-weight:400; color:#0a3656; text-align:center;}
+h4 {font-family: "Roboto", sans-serif; font-size:1.1em; font-weight:700; color:#0a3656;}
+h5 {font-family: "Roboto", sans-serif; font-size:0.9em; font-weight:600; color:#0a3656;}
+h6 {font-family: "Source Sans Pro", sans-serif; font-size:0.73em; font-weight:600; color:#5b5b5b;}
 
 .navbar,
 .navbar-brand {
@@ -188,12 +188,16 @@ background:#0a3656 !important;
 
 #fResetAll {
   float: right;
-  color: #EE3224; }
+  color: #EE3224;
+  font-size: 0.83em; }
 
 .hidden {
   display: none; }
 
-.submenu {}
+.submenu {
+  background:#f8f8fa;
+  font-size: 0.83em;
+}
 
 .navFeedback a {
   color: #2F9C67; }
@@ -245,14 +249,24 @@ background:#0a3656 !important;
   #context-page .container {
   max-width: 100%;
   margin: 0 auto;
-  display: grid;
+  margin-bottom: 20px;
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
 }
-#context-page .col {
+#context-page .box {
 padding: 5px;
-height:150px;
+margin: 5px;
+height:250px;
 border: #ccc solid 1px;
+min-width: 300px;
+}
+.box-title {font-size: 0.9em; height: 40px;margin:5px; font-weight:lighter ;}
+.box-excerpt {font-size: 0.7em; display: block; color:#ccc;}
+
+#context-page .col img{
+float:left;
+margin:5px;
 }
