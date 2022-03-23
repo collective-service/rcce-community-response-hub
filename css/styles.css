@@ -154,12 +154,26 @@ background:#0a3656 !important;
 
   /*  PAGE TEMPLATE */
 
+  .page-title {
+    padding-top:10px;
+    padding-left:5px;
+    font-size: 1.13em;
+    height:48px;
+    border-bottom:1px solid #dee2e6;
+  }
+  .page-desc {
+    marging-top:10px;
+    padding:5px;
+    font-size: 0.73em;
+    color: #5b5b5b;
+  }
+
   /*Tabs*/
 .nav-tabs {margin: 0px;}
 .submenu {
   padding-top:10px;
   padding-left:20px;
-  background:#f8f8fa;
+  /*background:#f8f8fa;*/
   font-size: 0.83em;
 }
 .submenu .navFeedback a {color: #bcbcbc; }
@@ -173,7 +187,7 @@ background:#0a3656 !important;
 .chart-title {font-family: "Open Source", sans-serif; font-size:0.73em; font-weight:300; color:#5b5b5b; margin:10px 5px 10px 5px; text-align: center;}
 
 .sidebar {
-  border-right: 1px solid #ccc; }
+}
   .sidebar .key-figure {
     padding-bottom: 10px;
     width: 50%; }
