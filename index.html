@@ -85,23 +85,7 @@
                                 <h4>
                                     Feedback
                                 </h4>
-                                <ul class="nav submenu">
-                                    <li class="nav-item navFeedback">
-                                        <a class="nav-link active" href="#" value="home">Overview</a>
-                                    </li>
-                                    <li class="nav-item navFeedback">
-                                        <a class="nav-link disabled" href="#" value="regions">Rumours</a>
-                                    </li>
-                                    <li class="nav-item navFeedback">
-                                        <a class="nav-link disabled" href="#" value="organisation">Organisation</a>
-                                    </li>
-                                    <li class="nav-item navFeedback">
-                                        <a class="nav-link disabled" href="#" value="feedbacks">Feedbacks</a>
-                                    </li>
-                                    <li class="nav-item navFeedback">
-                                        <a class="nav-link disabled" href="#" value="reports">Reports</a>
-                                    </li>
-                                </ul>
+
                                 <p class="small">
                                   Feedbacks are collected and compiled through an feedback framework available here. To learn more about it, contact us.
                                 </p>
@@ -157,20 +141,37 @@
 
                         <div class="row navigation" id="home">
                             <div class="col-md-12">
-                              <div class="row"><h5>Overall</h5>
+                              <ul class="nav nav-tabs submenu">
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link active" href="#" value="home">Overall</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="rumours">Rumours</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="questions">Questions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="suggestions">Suggestions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="metrics">Metrics</a>
+                                </li>
+                              </ul>
+                              <div class="row"><div class="panel-title">Overall</div>
 
                                   </div>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <h6>Emergency Pie chart</h6>
+                                        <div class="chart-title">Feedbacks per Emergencies</div>
                                         <div id="emergencyPieChart"></div>
                                     </div>
                                     <div class="col-md-4">
-                                        <h6>Type of feedback Pie chart</h6>
+                                        <div class="chart-title">Feedbacks per Types</div>
                                         <div id="feedbackPieChart"></div>
                                     </div>
                                     <div class="col-md-4">
-                                        <h6>Channel Pie chart</h6>
+                                        <div class="chart-title">Feedbacks per Channels</div>
                                         <div id="channelPieChart"></div>
                                     </div>
                                 </div>
@@ -210,38 +211,98 @@
                             </div>
                         </div>
                         <!-- Navigation Regions -->
-                        <div class="row navigation hidden" id="regions">
+                        <div class="row navigation hidden" id="rumours">
                             <div class="col-md-12">
-                                <h2>
-                                    Regions update
-                                </h2>
+                              <ul class="nav nav-tabs submenu">
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="home">Overall</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link active" href="#" value="rumours">Rumours</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="questions">Questions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="suggestions">Suggestions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="metrics">Metrics</a>
+                                </li>
+                              </ul>
+                                <div class="panel-title">Rumours & Believes</div>
 
                             </div>
                         </div>
                         <!-- Navigation Organisation -->
-                        <div class="row navigation hidden" id="organisation">
+                        <div class="row navigation hidden" id="questions">
                             <div class="col-md-12">
-                                <h2>
-                                    Organisation update
-                                </h2>
+                              <ul class="nav nav-tabs submenu">
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="home">Overall</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="rumours">Rumours</a>
+                                </li>
+                                <li class="nav-item navFeedback ">
+                                  <a class="nav-link active" href="#" value="questions">Questions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="suggestions">Suggestions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="metrics">Metrics</a>
+                                </li>
+                              </ul>
+                            <div class="panel-title">Questions</div>
 
                             </div>
                         </div>
                         <!-- Navigation Feedback -->
-                        <div class="row navigation hidden" id="feedbacks">
+                        <div class="row navigation hidden" id="suggestions">
                             <div class="col-md-12">
-                                <h2>
-                                    Feedbacks update
-                                </h2>
+                              <ul class="nav nav-tabs submenu">
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="home">Overall</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="rumours">Rumours</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="questions">Questions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link active" href="#" value="suggestions">Suggestions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="metrics">Metrics</a>
+                                </li>
+                              </ul>
+                              <div class="panel-title">Suggestions</div>
 
                             </div>
                         </div>
                         <!-- Navigation Reports -->
-                        <div class="row navigation hidden" id="reports">
+                        <div class="row navigation hidden" id="metrics">
                             <div class="col-md-12">
-                                <h2>
-                                    Reports update
-                                </h2>
+                              <ul class="nav nav-tabs submenu">
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="home">Overall</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="rumours">Rumours</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link" href="#" value="questions">Questions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link " href="#" value="suggestions">Suggestions</a>
+                                </li>
+                                <li class="nav-item navFeedback">
+                                  <a class="nav-link active" href="#" value="metrics">Metrics</a>
+                                </li>
+                              </ul>
+                              <div class="panel-title">Metrics</div>
 
                             </div>
                         </div>

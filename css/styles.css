@@ -152,6 +152,23 @@ background:#0a3656 !important;
 .row {
   margin: 3px; }
 
+  /*  PAGE TEMPLATE */
+
+  /*Tabs*/
+.nav-tabs {}
+.submenu {
+  margin-top:10px;
+  background:#f8f8fa;
+  font-size: 0.83em;
+}
+.submenu .navFeedback a {color: #bcbcbc; }
+.submenu .navFeedback   a:active {color: #000; }
+.submenu .nav-item a:hover {background:#FFF;}
+
+  /*PANEL*/
+.panel-title {font-family: "Open Source", sans-serif; font-size:1.1em; text-transform: uppercase; font-weight:300; color:#999999; margin:10px 5px 30px 5px;}
+.chart-title {font-family: "Open Source", sans-serif; font-size:0.73em; font-weight:300; color:#5b5b5b; margin:10px 5px 10px 5px; text-align: center;}
+
 .sidebar {
   border-right: 1px solid #ccc; }
   .sidebar .key-figure {
@@ -194,14 +211,7 @@ background:#0a3656 !important;
 .hidden {
   display: none; }
 
-.submenu {
-  background:#f8f8fa;
-  font-size: 0.83em;
-}
-
-.navFeedback a {
-  color: #2F9C67; }
-
+.
 #map {
   width: 100%;
   height: 500px;
