@@ -31,7 +31,6 @@
 </head>
 
 <body>
-
   <!-- Header & Navigation Menu -->
   <div class="container-fluid">
         <div class="row">
@@ -266,6 +265,7 @@
           	     	</div>
         	    </div>
           </div>
+
 
 <!-- Navigation to Feedback page -->
   <div class="row navPage" id="feedback-page">
@@ -511,6 +511,7 @@
 
 	    </div>
         </div>
+
 
 <!-- Navigation to Reports page -->
   <div class="row navPage hidden" id="reports-page">

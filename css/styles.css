@@ -167,6 +167,7 @@ background:#0a3656 !important;
     font-size: 0.73em;
     color: #5b5b5b;
   }
+  .full-height { height: 100%;}
 
   /*Tabs*/
 .nav-tabs {margin: 0px;}
@@ -182,9 +183,10 @@ background:#0a3656 !important;
 
   /*PANEL*/
 .panel {padding:0px;}
-.panel-title {font-family: "Open Source", sans-serif; font-size:1.1em; text-transform: uppercase; font-weight:300; color:#999999; margin:10px 5px 10px 5px;}
+.panel-title {display:block; font-family: "Open Source", sans-serif; font-size:1.1em; text-transform: uppercase; font-weight:300; color:#999999; margin:10px 5px 10px 5px;}
 .section {margin-bottom:20px;}
 .chart-title {font-family: "Open Source", sans-serif; font-size:0.73em; font-weight:300; color:#5b5b5b; margin:10px 5px 10px 5px; text-align: center;}
+
 
 .sidebar {
 }
@@ -273,22 +275,20 @@ background:#0a3656 !important;
   display: none; }
 
   /* CONTEXT PAGE */
-  #context-page .container {
+.grid-box {
+  display: grid;
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
-  display: flex;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
 }
 #context-page .box {
 padding: 5px;
 margin: 5px;
-height:250px;
+height:350px;
 border: #ccc solid 1px;
-min-width: 300px;
+min-width: 400px;
 }
 .box-title {font-size: 0.9em; height: 40px;margin:5px; font-weight:lighter ;}
 .box-excerpt {font-size: 0.7em; display: block; color:#ccc;}
